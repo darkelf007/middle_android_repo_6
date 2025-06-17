@@ -34,7 +34,8 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
