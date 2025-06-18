@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class AddNoteInteractorImpl @Inject constructor(
     private val repository: NotesRepository
-): AddNoteInteractor {
+) : AddNoteInteractor {
     override suspend fun invoke(note: Note) {
         repository.insertNote(note)
     }

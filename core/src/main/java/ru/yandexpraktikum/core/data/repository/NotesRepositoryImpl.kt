@@ -14,20 +14,23 @@ import javax.inject.Inject
 class NotesRepositoryImpl @Inject constructor(
     private val noteDao: NoteDao,
     private val noteMapper: DataNoteMapper
-): NotesRepository {
+) : NotesRepository {
     override suspend fun insertNote(note: Note) {
         return noteDao.insert(
-            noteMapper.mapToEntity(note))
+            noteMapper.mapToEntity(note)
+        )
     }
 
     override suspend fun deleteNote(note: Note) {
         noteDao.delete(
-            noteMapper.mapToEntity(note))
+            noteMapper.mapToEntity(note)
+        )
     }
 
     override suspend fun updateNote(note: Note): Int {
         return noteDao.update(
-            noteMapper.mapToEntity(note))
+            noteMapper.mapToEntity(note)
+        )
     }
 
     override fun getAllNotes(): Flow<List<Note>> {

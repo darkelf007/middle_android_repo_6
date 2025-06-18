@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class FetchAllNotesInteractorImpl @Inject constructor(
     private val repository: NotesRepository
-): FetchAllNotesInteractor {
+) : FetchAllNotesInteractor {
     override fun invoke(): Flow<List<Note>> {
         return repository.getAllNotes()
     }
