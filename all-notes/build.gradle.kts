@@ -38,6 +38,9 @@ android {
 }
 
 dependencies {
+
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
     implementation(project(":core"))
     implementation(project(":core-ui"))
 
